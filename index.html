@@ -1,24 +1,74 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+	
+	<title>jrr89 - Ghostbin</title>
+	
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/ghostbin-icon120.png" sizes="120x120">
+	<link rel="apple-touch-icon" href="/ghostbin-icon152.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="/ghostbin-icon76.png" sizes="76x76">
+	<link rel="apple-touch-icon" href="/ghostbin-icon72.png" sizes="72x72">
 
-    <title>Pr0ject</title>
-  </head>
+	<link rel="stylesheet" href="/css/lib.min.606e9eeb.css" media="all">
 
-  <body>
+	<link rel="stylesheet" href="/css/application.min.037c7db6.css" media="all">
 
-    <header>
-      <div class="container">
-        <h1>Pr0ject</h1>
-        <h2>email:<a href="mailto:pr0ject@outlook.com">pr0ject@outlook.com</a></h2>
-      </div>
-    </header>
+
+
+	<link rel="stylesheet" href="/css/theme.min.8c5eb525.css" media="all">
+
+	<script src="/js/lib.min.20d55ed1.js"></script>
+
+	<script src="/js/application.min.1f528dc2.js"></script>
+
+	
+</head>
+<body>
+	<div class="flash-container" id="flash-container">
+		<div class="well" id="flash-template">
+			<p></p>
+		</div>
+	</div>
+
+
+<div class="paste-toolbox unselectable">
+	
+<a title="Home" href="/" id="home" class="btn btn-inverse"><i class="icon-home icon-large"></i></a>
+
+	<span class="paste-title">
+		<strong>Paste jrr89</strong>
+		<span class="paste-subtitle">Plain Text
+			
+		</span>
+	</span>
+	<div class="paste-toolbox-buttons pull-right" id="desktop-paste-control-container">
+		<div id="paste-controls">
+			<div class="btn-group">
+				<a title="View Raw" href="/paste/jrr89/raw" class="btn btn-inverse">
+					<i class="icon-file-text icon-large"></i>
+					<span class="button-title">View Raw</span>
+				</a>
+				<a title="Download" href="/paste/jrr89/download" class="btn btn-inverse">
+					<i class="icon-download icon-large"></i>
+					<span class="button-title">Download</span>
+				</a>
+			</div>
+			
+			<button title="Report" type="button" data-target="#reportModal" data-toggle="modal" class="btn btn-inverse">
+				<i class="icon-flag icon-large"></i>
+				<span class="button-title">Report</span>
+			</button>
+			
+		</div>
+		
+	</div>
+</div>
 <div class="code code-line-numbers unselectable" id="line-numbers" aria-hidden="true"></div>
 <div class="code" id="code"> _____ _                __            _         ___       _     _      
 /__   \ |__   ___    /\ \ \___   ___ | |__     / _ \_   _(_) __| | ___  ®
@@ -265,5 +315,87 @@ of a Linux distribution.
 
 
 If you read the whole lot, that should get you started, and remember to have fun! Good luck :D</div>
-  </body>
+<div class="well visible-phone unselectable" id="phone-paste-control-container"></div>
+<div id="reportModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <form name="reportForm" action="/paste/jrr89/report" method="post">
+        <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>Report Paste</h3>
+        </div>
+        <div class="modal-body">
+		<p>For what reason do you wish to report paste <strong>jrr89</strong>?</p>
+		<p><select name="reason">
+			<option value="personal">Personal Information</option>
+			<option value="spam">Spam</option>
+		</select></p>
+		</div>
+		<div class="modal-footer">
+		<button type="submit" class="btn btn-danger">Report Paste</button>
+		<button data-dismiss="modal" class="btn" aria-hidden="true">Nevermind</button>
+	</div>
+	</form>
+</div>
+<div id="grantModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<form name="grantForm" action="/paste/jrr89/grant/new" method="get">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+		<h3>Grant Edit Permission</h3>
+	</div>
+	<div class="modal-body">
+		<p>Are you sure you want to grant permission to another user to edit paste <strong>jrr89</strong>?</p>
+		<p>This is not reversible. Grant links will be valid for 48 hours.</p>
+		<div class="grant-tutorial">
+			<p>Send the following URLs (one per intended editor) to collaborators for redemption.</p>
+		</div>
+		<div style="display: none;" id="grant-item-template" class="grant-item input-prepend">
+			<span class="add-on"><i class="icon-lemon"></i></span>
+			<input type="text"></input>
+		</div>
+		<div id="grantContainer" class="grant-container"></div>
+		<div id="grantError" class="error" style="display:none;">There was an error generating a new grant.</div>
+		<button type="button" id="newGrantButton" class="btn">Generate Grant</button>
+	</div>
+	<div class="modal-footer">
+		<button data-dismiss="modal" class="btn" aria-hidden="true" id="cancelGranting">Nevermind</button>
+	</div>
+</div>
+<script>
+$("#newGrantButton").on("click", function() {
+	$.ajax({
+		"method": "POST",
+		"data": null,
+		"url": "\/paste\/jrr89\/grant\/new",
+		"success": function(e) {
+			var template = $("#grant-item-template");
+			var newItem = template.clone();
+			newItem.attr("id", "").show().find("input").val(e.acceptURL);
+			$("div#grantContainer").append(newItem);
+
+			$("div.grant-tutorial").show();
+			$("button#cancelGranting").text("I'm Done.");
+			$("div#grantError").hide();
+		},
+		"error": function(e) {
+			$("div#grantError").show();
+		},
+		"timeout": 2000, 
+	});
+});
+</script>
+
+
+<script src="https://login.persona.org/include.js"></script>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40428260-2', 'ghostbin.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
 </html>
